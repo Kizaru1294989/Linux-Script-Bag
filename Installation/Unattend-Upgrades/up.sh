@@ -9,6 +9,6 @@ echo installation de "                    _   _                 _          _    
                                                                    |_|    |___/                           "
 apt update
 apt upgrade
-apt install unattended-upgrades
+apt install -y unattended-upgrades
 dpkg-reconfigure --priority=low unattended-upgrades
 echo "Configuration terminé"

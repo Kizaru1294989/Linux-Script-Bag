@@ -2,7 +2,7 @@
 echo "Installation et configuration de SSH"
 apt update
 apt upgrade
-apt install ssh
+apt install -y ssh
 
 read -p "Entrez le port SSH souhaité (par défaut : 22) : " custom_port
 
@@ -19,3 +19,4 @@ fi
 systemctl restart ssh
 
 echo "Configuration terminée. SSH écoute maintenant sur le port $custom_port."
+

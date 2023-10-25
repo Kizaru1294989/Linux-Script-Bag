@@ -6,6 +6,13 @@ ip_with_mask="$ip_info"
 
 echo -e "auto lo\niface lo inet loopback\n" > /etc/network/interfaces
 echo -e "auto $network_interface\niface $network_interface inet static\n\taddress $ip_with_mask\n\tgateway $gateway" >> /etc/network/interfaces
+echo "
+███████ ██    ██  ██████  ██████ ███████ ███████ ███████ 
+██      ██    ██ ██      ██      ██      ██      ██      
+███████ ██    ██ ██      ██      █████   ███████ ███████ 
+     ██ ██    ██ ██      ██      ██           ██      ██ 
+███████  ██████   ██████  ██████ ███████ ███████ ███████                                                   
+"
 echo "Votre machine possède désormais une adresse IP statique avec ces caractéristiques : "
 echo "Carte réseau : $network_interface"
 echo "Adresse IP avec masque : $ip_with_mask"

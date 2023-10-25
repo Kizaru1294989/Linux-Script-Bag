@@ -1,35 +1,43 @@
 #!/bin/bash
-echo " ___  ________   ________  _________  ________  ___       ___       ________  _________  ___  ________  ________           ________  _______           ________  ________  ________  ___  __    ________  ________  _______   ________           ________  ________  ________  ___  ________  ___  ___  _______   ________      
-|\  \|\   ___  \|\   ____\|\___   ___\\   __  \|\  \     |\  \     |\   __  \|\___   ___\\  \|\   __  \|\   ___  \        |\   ___ \|\  ___ \         |\   __  \|\   __  \|\   ____\|\  \|\  \ |\   __  \|\   ____\|\  ___ \ |\   ____\         |\   __  \|\   __  \|\   ____\|\  \|\   __  \|\  \|\  \|\  ___ \ |\   ____\     
-\ \  \ \  \\ \  \ \  \___|\|___ \  \_\ \  \|\  \ \  \    \ \  \    \ \  \|\  \|___ \  \_\ \  \ \  \|\  \ \  \\ \  \       \ \  \_|\ \ \   __/|        \ \  \|\  \ \  \|\  \ \  \___|\ \  \/  /|\ \  \|\  \ \  \___|\ \   __/|\ \  \___|_        \ \  \|\ /\ \  \|\  \ \  \___|\ \  \ \  \|\  \ \  \\\  \ \   __/|\ \  \___|_    
- \ \  \ \  \\ \  \ \_____  \   \ \  \ \ \   __  \ \  \    \ \  \    \ \   __  \   \ \  \ \ \  \ \  \\\  \ \  \\ \  \       \ \  \ \\ \ \  \_|/__       \ \   ____\ \   __  \ \  \    \ \   ___  \ \   __  \ \  \  __\ \  \_|/_\ \_____  \        \ \   __  \ \   __  \ \_____  \ \  \ \  \\\  \ \  \\\  \ \  \_|/_\ \_____  \   
-  \ \  \ \  \\ \  \|____|\  \   \ \  \ \ \  \ \  \ \  \____\ \  \____\ \  \ \  \   \ \  \ \ \  \ \  \\\  \ \  \\ \  \       \ \  \_\\ \ \  \_|\ \       \ \  \___|\ \  \ \  \ \  \____\ \  \\ \  \ \  \ \  \ \  \|\  \ \  \_|\ \|____|\  \        \ \  \|\  \ \  \ \  \|____|\  \ \  \ \  \\\  \ \  \\\  \ \  \_|\ \|____|\  \  
-   \ \__\ \__\\ \__\____\_\  \   \ \__\ \ \__\ \__\ \_______\ \_______\ \__\ \__\   \ \__\ \ \__\ \_______\ \__\\ \__\       \ \_______\ \_______\       \ \__\    \ \__\ \__\ \_______\ \__\\ \__\ \__\ \__\ \_______\ \_______\____\_\  \        \ \_______\ \__\ \__\____\_\  \ \__\ \_____  \ \_______\ \_______\____\_\  \ 
-    \|__|\|__| \|__|\_________\   \|__|  \|__|\|__|\|_______|\|_______|\|__|\|__|    \|__|  \|__|\|_______|\|__| \|__|        \|_______|\|_______|        \|__|     \|__|\|__|\|_______|\|__| \|__|\|__|\|__|\|_______|\|_______|\_________\        \|_______|\|__|\|__|\_________\|__|\|___| \__\|_______|\|_______|\_________\
-                   \|_________|                                                                                                                                                                                                 \|_________|                           \|_________|          \|__|                  \|_________|
-                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                "
-apt install netstat-nat
-echo installation de netstat-nat
-apt install python
-echo installation de python
-apt install pip
-echo installation de pip
-apt install vim
-echo installation de vim
-apt install curl
-echo installation de curl
-apt install fail2ban
-echo installation de fail2ban
-apt install cpulimit
-echo installation de cpulimit
-apt install dstat
-echo installation de dstat
-apt install netcat
-echo installation de netcat
-apt install nmap
-echo installation de nmap
-apt install wireshark
-echo installation wireshark
-apt install ufw
-echo installation de ufw
+echo "Installation de packages BASIQUES"
+
+echo "Les paquets suivants seront installés :"
+echo "- netstat-nat"
+echo "- python3"
+echo "- pip"
+echo "- vim"
+echo "- curl"
+echo "- fail2ban"
+echo "- cpulimit"
+echo "- dstat"
+echo "- netcat"
+echo "- nmap"
+echo "- wireshark"
+echo "- ufw"
+
+read -p "Confirmez l'installation de ces paquets (y/N) : " confirm
+
+if [[ "$confirm" == "y" || "$confirm" == "Y" ]]; then
+    apt install -y netstat-nat
+    apt install -y python3
+    apt install -y python3-pip
+    apt install -y vim
+    apt install -y curl
+    apt install -y fail2ban
+    apt install -y cpulimit
+    apt install -y dstat
+    apt install -y netcat
+    apt install -y nmap
+    apt install -y wireshark
+    apt install -y ufw
+    echo "Installation terminée."
+    echo "
+███████ ██    ██  ██████  ██████ ███████ ███████ ███████ 
+██      ██    ██ ██      ██      ██      ██      ██      
+███████ ██    ██ ██      ██      █████   ███████ ███████ 
+     ██ ██    ██ ██      ██      ██           ██      ██ 
+███████  ██████   ██████  ██████ ███████ ███████ ███████                                                   
+"
+else
+    echo "Installation annulée."
+fi
