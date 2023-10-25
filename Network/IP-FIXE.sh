@@ -1,9 +1,9 @@
 #!/bin/bash
 
-ip_address=$(ip a | grep inet | awk '{print $2}' | head -n1)
+# Récupérer l'adresse IP et le masque de la carte réseau "ens192"
+interface="ens192"
+ip_info=$(ip a | grep "$interface:" -A2 | tail -n1 | awk '{print $2}')
 
-
-subnet_mask=$(ip a | grep inet | awk '{print $2}' | head -n1 | cut -d/ -f2)
-
-echo "Adresse IP de la carte réseau : $ip_address"
-echo "Masque de sous-réseau : $subnet_mask"
+# Afficher les résultats
+echo "Carte réseau : $interface"
+echo "Adresse IP et masque : $ip_info"
