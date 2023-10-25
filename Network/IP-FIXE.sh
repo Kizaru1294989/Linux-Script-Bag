@@ -14,9 +14,9 @@ gateway=$(ip route | grep default | awk '{print $3}')
 # Concaténer l'adresse IP et le masque
 ip_with_mask="$ip_info"
 
-echo $network_interface
-echo $ip_with_mask
-echo $gateway
+echo "Carte réseau : $network_interface"
+echo "Adresse IP avec masque : $ip_with_mask"
+echo "Passerelle (Gateway) : $gateway"
 
 # Ajouter les informations au fichier /etc/network/interfaces
 echo -e "auto lo\niface lo inet loopback\n" > /etc/network/interfaces
