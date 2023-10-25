@@ -12,7 +12,9 @@ gateway=$(ip route | grep default | awk '{print $3}')
 # Concaténer l'adresse IP et le masque
 ip_with_mask="$ip_info"
 
-# Afficher les informations
-echo "Carte réseau : $network_interface"
-echo "Adresse IP avec masque : $ip_with_mask"
-echo "Passerelle (Gateway) : $gateway"
+# Ajouter les informations au fichier /etc/network/interfaces
+echo -e "auto lo\niface lo inet loopback\n" | sudo tee /etc/network/interfaces > /dev/null
+echo -e "auto $network_interface\niface $network_interface inet static\n\taddress $ip_address\n\tnetmask $subnet_mask\n\tgateway $gateway" | sudo tee -a /etc/network/interfaces > /dev/null
+
+# Redémarrer le réseau pour appliquer les modifications
+sudo /etc/init.d/networking restart
